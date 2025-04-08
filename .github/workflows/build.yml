@@ -52,16 +52,5 @@ jobs:
           name: artifact
 
     outputs:
-      subject-name: artifact
+      subject-name: VietType_App
       subject-digest: sha256:${{ steps.upload.outputs.artifact-digest }}
-
-  attest:
-    needs: [build]
-    uses: dinhngtu/github-workflows/.github/workflows/attest.yml@af4b127febded0600cafa4f5935f99a24e267a8c
-    permissions:
-      id-token: write
-      contents: read
-      attestations: write
-    with:
-      subject-name: ${{ needs.build.outputs.subject-name }}
-      subject-digest: ${{ needs.build.outputs.subject-digest }}
