@@ -52,5 +52,5 @@ jobs:
           name: VietType_App
 
     outputs:
-      subject-name: artifact
+      subject-name: VietType_App
       subject-digest: sha256:${{ steps.upload.outputs.artifact-digest }}
